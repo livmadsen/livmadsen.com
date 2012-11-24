@@ -44,6 +44,17 @@
       "outputAbbreviatedPath" : "\/javascript-source\/LM.Instafeed-ck.js",
       "fileType" : 5
     },
+    "\/javascript-source\/LM.Welcome.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/javascript-source\/LM.Welcome.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/javascript-source\/LM.Welcome-ck.js",
+      "fileType" : 5
+    },
     "\/sass\/screen.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -308,48 +319,55 @@
     {
       "type" : 0,
       "position" : 0,
-      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/zepto.js",
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/LM.Welcome.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
       "position" : 1,
-      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/event.js",
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/zepto.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
       "position" : 2,
-      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/data.js",
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/event.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
       "position" : 3,
-      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/ajax.js",
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/data.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
       "position" : 4,
-      "linkedFileAbbreviatedPath" : "\/javascript-source\/plugins\/jquery.instagram.js",
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/zepto\/ajax.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
       "position" : 5,
-      "linkedFileAbbreviatedPath" : "\/javascript-source\/LM.Instafeed.js",
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/plugins\/jquery.instagram.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 0,
       "position" : 6,
+      "linkedFileAbbreviatedPath" : "\/javascript-source\/LM.Instafeed.js",
+      "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 7,
       "linkedFileAbbreviatedPath" : "\/javascript-source\/LM.Twitterfeed.js",
       "baseFileAbbreviatedPath" : "\/javascript-source\/main.js",
       "followForSyntaxChecking" : 1
