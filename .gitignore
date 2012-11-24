@@ -1,0 +1,5 @@
+*.log
+*.bak
+.DS_Store
+sftp-config.json
+.sass-cache/

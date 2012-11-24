@@ -1,0 +1,28 @@
+﻿$usemediaqueries: false;
+
+$small_max: 0;
+$medium_max: 0;
+$large_max: 0;
+
+$medium_min: 0;
+$large_min: 0;
+$xlarge_min: 0;
+
+// exclude medium styles and use small styles for all screens
+// ===============================
+// The basic respond-to mixin
+// ===============================
+
+@mixin respond-to($media) {
+  @if $media == medium-only {
+    @content;
+  }
+  @if $media == medium {
+    @content;
+  }
+  @else if $media == ie {
+    @content;
+  }
+}
+
+@import "facades";

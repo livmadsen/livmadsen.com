@@ -1,0 +1,240 @@
+/* Base page */
+
+html {
+	background: #f7f7ed url("../images/body.jpg");
+	font-size: 62.5%; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+	-ms-text-size-adjust: 100%; /* 2 */
+	}
+
+body {
+	font-family: $primary_font;
+	@extend .gamma;
+	line-height: 1.5;
+	@include single-text-shadow(#FDFDFD, 1px, 1px, 0);
+	color: $text_primary;
+	font-style:  normal;
+	font-weight: 400;
+}
+a {
+	color: $link;
+	border-bottom: 1px solid transparent;
+	text-decoration: none;
+	}
+
+a:visited {
+	color: lighten($link,5%);
+	border-color: lighten($link,15%);
+	}
+
+a:hover,
+a:active {
+	color: $link_active;
+	border-color: $link_active;
+	}
+
+
+
+body {
+	padding-top: 13px;
+	background: url(../images/header.jpeg) repeat-x 0 -410px;
+
+	@include small{
+		@if($DEBUG == true){ @include breakpointdebug("Small media query fired") };
+	}
+	@include x-small{
+		@if($DEBUG == true){ @include breakpointdebug("X-small media query fired") };
+	}
+	@include medium{
+		@if($DEBUG == true){ @include breakpointdebug("Medium media query fired") };
+	}
+	@include large{
+		@if($DEBUG == true){ @include breakpointdebug("Large media query fired") };
+	}
+	@include x-large{
+		@if($DEBUG == true){ @include breakpointdebug("X-large media query fired") };
+	}
+
+	@include retina {
+		// @if($DEBUG == true){ @include breakpointdebug("Retina media query fired") };
+	}
+}
+
+
+
+
+.page-container {
+	overflow: hidden;
+	width: 100%;
+	@include background-image( linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0)) );
+	@include small-only {
+		padding: 1em;
+	}
+	@include x-small {
+		padding: 1em 0;
+	}
+	@include medium {
+		padding: 1em 4em;
+	}
+}
+
+.site-top {
+	overflow: hidden;
+	text-align: center;
+	padding-top: 2em;
+	padding-bottom: 3.2em;
+
+	@include x-small {
+		display: none;
+	}
+
+	@include small{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.intro-line-1 {
+	margin: 0;
+	font-family: $secondary_font ;
+	@include font-size(64px);
+	line-height: 1.1;
+	color: #ff795e;
+	font-weight: normal;
+}
+.intro-line-2 {
+	margin: 0px auto;
+	text-shadow: 2px 2px 0 #F4F1DD;
+}
+.intro-subline-1,
+.intro-subline-3 {
+	@include font-size(80px);
+	font-weight: 700;
+	line-height: 1;
+	font-family: $tertiary_font;
+	letter-spacing: .02em;
+}
+.intro-subline-2 {
+	margin: 0 -7px 0 -2px;
+	display: inline-block;
+	font-family: $secondary_font ;
+	@include font-size(26px);
+	line-height: 1;
+	letter-spacing: .02em;
+	text-shadow: 2px 2px 0 #F4F1DD;
+	font-weight: normal;
+}
+.intro-sub-word-1 {
+	display: block;
+}
+
+
+
+
+.about-me {
+	@extend .alpha;
+	font-family: $primary_font;
+}
+
+
+
+
+.twitter-feed-header {
+	@extend %element-heading;
+}
+
+.twitter-feed-caption {
+	@extend %element-caption;
+}
+
+.twitter-feed-tweet {
+	@include rem('margin-bottom',zen-half-gutter()/2);
+}
+
+.twitter-feed-tweet-meta {
+	@extend .epsilon;
+	display: block;
+	a {
+		border: 0;
+		color: $light;
+	}
+}
+
+.twitter-feed-tweets {
+	@extend %element-content;
+}
+
+
+
+.networks-header {
+	@extend %element-heading;
+}
+
+.networks-caption {
+	@extend %element-caption;
+}
+
+
+
+
+.frontenders-header {
+	@extend %element-heading;
+}
+
+.frontenders-caption {
+	@extend %element-caption;
+}
+
+.frontenders-content {
+	@extend %element-content;
+}
+
+
+
+
+.networks {
+	li {
+		padding-bottom: 5px;
+		margin-top: 5px;
+	}
+}
+
+.networks-content {
+	@extend %element-content;
+}
+
+
+
+.instagram-feed {
+	padding: 0;
+	padding: 4px;
+	background: salmon url(../images/header.jpeg) repeat 0 0;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	line-height: 0;
+}
+
+.instagrams {
+	padding: 0;
+	@include small {
+		width: 150%;
+		margin-left: -25%;
+
+	}
+	@include medium-only {
+		width: 120%;
+		margin-left: -10%;
+	}
+	@include large {
+		width: 110%;
+		margin-left: -5%;
+	}
+}
+
+.instagram-placeholder {
+	@include inline-block;
+	a {
+		border: 0;
+	}
+}

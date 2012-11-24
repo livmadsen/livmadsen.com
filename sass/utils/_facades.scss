@@ -1,0 +1,108 @@
+// ===============================
+// Façades to the respond-to mixin
+// ===============================
+
+// Sizes
+@mixin x-small {
+  @include respond-to(x-small) {
+  @content;
+  }
+}
+@mixin small {
+  @include respond-to(small) {
+	@content;
+  }
+}
+@mixin small-only {
+  @include respond-to(small-only) {
+  @content;
+  }
+}
+@mixin medium {
+  @include respond-to(medium) {
+	@content;
+  }
+}
+@mixin medium-only {
+  @include respond-to(medium-only) {
+	@content;
+  }
+}
+@mixin large {
+  @include respond-to(large) {
+	@content;
+  }
+}
+@mixin large-only {
+  @include respond-to(large-only) {
+  @content;
+  }
+}
+@mixin x-large {
+  @include respond-to(x-large) {
+	@content;
+  }
+}
+@mixin x-large-only {
+  @include respond-to(x-large-only) {
+  @content;
+  }
+}
+@mixin xx-large {
+  @include respond-to(xx-large) {
+  @content;
+  }
+}
+
+// Pixel density
+@mixin retina {
+  @include respond-to(retina) {
+	@content;
+  }
+}
+
+// Orientation
+@mixin orientation-portrait {
+  @include respond-to(orientation-portrait) {
+	@content;
+  }
+}
+@mixin orientation-landscape {
+  @include respond-to(orientation-landscape) {
+	@content;
+  }
+}
+
+@mixin ie {
+  @include respond-to(ie) {
+  @content;
+  }
+}
+
+
+// ================================
+// Interface for Javascript access to the responsive properties
+// ================================
+
+// #responsive-properties-interface {
+//   display: none;
+
+//   #screen_size {
+// 	content: 'not set';
+// 	@include small {content: 'small';}
+// 	@include medium {content: 'medium';}
+// 	@include large {content: 'large';}
+// 	//@include x-large {content: 'x-large';}
+//   }
+
+//   #pixel_density {
+// 	content: 'non-retina';
+// 	@include retina {content: 'retina';}
+//   }
+
+//   #device_orientation {
+// 	content: 'not set';
+// 	@include orientation-portrait {content: 'portrait';}
+// 	@include orientation-landscape {content: 'landscape';}
+//   }
+// }

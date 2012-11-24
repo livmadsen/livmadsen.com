@@ -1,0 +1,165 @@
+$zen-auto-include-item-base: false;
+
+$zen-column-count: 9;
+$zen-gutter-width: 80px;
+
+$small_gutter: 20px;
+
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie6: false;
+
+
+
+$DEBUG: false;
+
+@mixin breakpointdebug($message, $color: rgba(255,255,0, 0.9) ){
+	&::before{
+		content: $message;
+		font-weight: bold;
+		display: block;
+		min-height: 20px;
+		height: auto;
+		width: 100%;
+		text-align: center;
+		background: #{$color};
+		position: absolute;
+		right: 0;
+		left: 0;
+		top: 0;
+		z-index: 99;
+	}
+}
+
+
+body {
+	@include medium {
+		@include zen-grid-container;
+	}
+}
+
+.base-grid-element {
+	@include medium {
+		@include zen-grid-item-base();
+		padding-top: zen-half-gutter();
+		padding-bottom: zen-half-gutter();
+	}
+
+	@include small {
+		@include rem('padding',$small_gutter);
+	}
+}
+
+.site-top {
+	// background-color: salmon;
+
+	@extend .base-grid-element;
+	@include zen-grid-item($zen-column-count, 1);
+}
+
+.page-container {
+	@include zen-clear;
+	@include zen-grid-item-base();
+	@include zen-grid-item($zen-column-count, 1);
+	@include zen-nested-container();
+}
+
+.about-me {
+	// background: rosybrown;
+
+	@extend .base-grid-element;
+	@include small {
+		@include rem('padding-bottom',$small_gutter*2);
+	}
+
+	@include medium-only{
+		@include zen-clear;
+		@include zen-grid-item($zen-column-count, 1);
+	}
+
+	@include large-only{
+		@include zen-grid-item(5, 1, right);
+	}
+
+	@include x-large-only{
+		@include zen-grid-item(5, 3);
+	}
+	@include xx-large{
+		@include zen-grid-item(3, 1);
+	}
+}
+
+.twitter-feed {
+	// background: steelBlue ;
+
+	@extend .base-grid-element;
+
+	@include medium-only{
+		@include zen-clear;
+		@include zen-grid-item(5, 1);
+	}
+	@include large-only{
+		@include zen-clear(left);
+		@include zen-grid-item(4, 1);
+	}
+	@include x-large-only{
+		@include zen-clear(right);
+		@include zen-grid-item(2, 1, right);
+	}
+	@include xx-large{
+		@include zen-grid-item(2, 4);
+	}
+}
+
+.frontenders {
+	// background: seaGreen ;
+
+	@extend .base-grid-element;
+
+	@include small {
+		@include rem('padding-bottom',$small_gutter*2);
+	}
+	@include medium-only{
+		@include zen-clear(right);
+		@include zen-grid-item(4, 1, right);
+	}
+	@include large-only{
+		@include zen-clear(both);
+		@include zen-grid-item(4, 1);
+	}
+	@include x-large-only{
+		@include zen-grid-item(2, 1);
+	}
+	@include xx-large{
+		@include zen-grid-item(2, 6);
+	}
+}
+
+
+.networks {
+	// background: paleGoldenRod ;
+
+	@extend .base-grid-element;
+
+	@include medium-only{
+		@include zen-clear(right);
+		@include zen-grid-item(4, 1, right);
+	}
+
+	@include large-only{
+		@include zen-grid-item(5, 5);
+	}
+
+	@include x-large-only{
+		@include zen-clear(left);
+		@include zen-grid-item(2, 1);
+		padding-top: 0;
+	}
+	@include xx-large{
+		@include zen-grid-item(2, 8);
+	}
+}
+
+.instagram-feed {
+	background-color: salmon;
+	@include zen-clear(both);
+}

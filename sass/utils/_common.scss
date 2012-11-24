@@ -1,0 +1,103 @@
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+$baseline-px: 10px;
+
+@mixin rem($property, $px-values) {
+  // Convert the baseline into rems
+  $baseline-rem: $baseline-px / 1rem;
+  // Print the first line in pixel values
+  #{$property}: $px-values;
+  // If there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number" {
+	#{$property}: $px-values / $baseline-rem; }
+  @else {
+	// Create an empty list that we can dump values into
+	$rem-values: unquote("");
+	@each $value in $px-values {
+	  // If the value is zero, return 0
+	  @if $value == 0 {
+		$rem-values: append($rem-values, $value); }
+	  @else {
+		$rem-values: append($rem-values, $value / $baseline-rem); } }
+	// Return the property and its list of converted values
+	#{$property}: $rem-values; } }
+
+
+@mixin font-size($px-value){
+  @include rem('font-size',$px-value);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ***** Colors ***** */
+
+$text_primary: #666;
+$text_secondary: lighten(#666,5%);
+$light: #aaa;
+$link: lighten($text_primary,10%);
+$link_active: salmon;
+$header: #666;
+
+
+$primary_font : 'times new roman', serif;
+$secondary_font : 'Cantarell', 'trebuchet ms', sans-serif;
+$tertiary_font : 'trebuchet ms', sans-serif;
+
+
+.alpha   {
+	@include font-size(21px);
+  @include x-small {
+    @include font-size(17px);
+  }
+	@include small-only {
+		@include font-size(19px);
+	}
+}
+.beta    {
+  @include font-size(19px);
+  @include small-only {
+    @include font-size(21px);
+  }
+}
+.gamma   { @include font-size(17px); }
+.delta   { @include font-size(15px); }
+.epsilon { @include font-size(12px); }
+.zeta    { @include font-size(10px); }
+
+
+%element-heading
+{
+  @extend .beta;
+  @include rem('padding-bottom',11px);
+  @include rem('margin-bottom',24px);
+  border-bottom: 1px solid #DDD;
+  color: $header;
+  font-family: $secondary_font;
+}
+
+%element-caption {
+  @extend .beta;
+  font-weight: normal;
+  color: $header;
+}
+
+%element-content {
+  color: $text_secondary;
+  @extend .gamma;
+}
+
