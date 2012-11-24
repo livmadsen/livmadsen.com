@@ -1,43 +1,23 @@
 /* Base page */
 
 html {
-	background: #f7f7ed url("../images/body.jpg");
+	background: $background;
 	font-size: 62.5%; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
 	}
 
 body {
-	font-family: $primary_font;
+	padding-top: 13px;
+	background: url(../images/header.jpeg) repeat-x 0 -410px;
+
 	@extend .gamma;
+	font-family: $font_primary;
 	line-height: 1.5;
 	@include single-text-shadow(#FDFDFD, 1px, 1px, 0);
 	color: $text_primary;
 	font-style:  normal;
 	font-weight: 400;
-}
-a {
-	color: $link;
-	border-bottom: 1px solid transparent;
-	text-decoration: none;
-	}
-
-a:visited {
-	color: lighten($link,5%);
-	border-color: lighten($link,15%);
-	}
-
-a:hover,
-a:active {
-	color: $link_active;
-	border-color: $link_active;
-	}
-
-
-
-body {
-	padding-top: 13px;
-	background: url(../images/header.jpeg) repeat-x 0 -410px;
 
 	@include small{
 		@if($DEBUG == true){ @include breakpointdebug("Small media query fired") };
@@ -59,6 +39,24 @@ body {
 		// @if($DEBUG == true){ @include breakpointdebug("Retina media query fired") };
 	}
 }
+
+
+a {
+	color: $text_link;
+	border-bottom: 1px solid transparent;
+	text-decoration: none;
+	}
+
+a:visited {
+	color: text_lighten($text_link,5%);
+	border-color: text_lighten($text_link,15%);
+	}
+
+a:hover,
+a:active {
+	color: $text_link_active;
+	border-color: $text_link_active;
+	}
 
 
 
@@ -96,7 +94,7 @@ body {
 
 .intro-line-1 {
 	margin: 0;
-	font-family: $secondary_font ;
+	font-family: $font_secondary ;
 	@include font-size(64px);
 	line-height: 1.1;
 	color: #ff795e;
@@ -111,13 +109,13 @@ body {
 	@include font-size(80px);
 	font-weight: 700;
 	line-height: 1;
-	font-family: $tertiary_font;
+	font-family: $font_tertiary;
 	letter-spacing: .02em;
 }
 .intro-subline-2 {
 	margin: 0 -7px 0 -2px;
 	display: inline-block;
-	font-family: $secondary_font ;
+	font-family: $font_secondary ;
 	@include font-size(26px);
 	line-height: 1;
 	letter-spacing: .02em;
@@ -133,7 +131,7 @@ body {
 
 .about-me {
 	@extend .alpha;
-	font-family: $primary_font;
+	font-family: $font_primary;
 }
 
 
@@ -156,7 +154,7 @@ body {
 	display: block;
 	a {
 		border: 0;
-		color: $light;
+		color: $text_light;
 	}
 }
 

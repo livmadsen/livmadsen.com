@@ -39,24 +39,19 @@ $baseline-px: 10px;
 
 
 
-
-
-
-
-
 /* ***** Colors ***** */
 
 $text_primary: #666;
 $text_secondary: lighten(#666,5%);
-$light: #aaa;
-$link: lighten($text_primary,10%);
-$link_active: salmon;
-$header: #666;
+$text_light: #aaa;
+$text_link: lighten($text_primary,10%);
+$text_link_active: salmon;
 
+$background: #f1f1e8;
 
-$primary_font : 'times new roman', serif;
-$secondary_font : 'Cantarell', 'trebuchet ms', sans-serif;
-$tertiary_font : 'trebuchet ms', sans-serif;
+$font_primary : 'times new roman', serif;
+$font_secondary : 'Cantarell', 'trebuchet ms', sans-serif;
+$font_tertiary : 'trebuchet ms', sans-serif;
 
 
 .alpha   {
@@ -86,14 +81,14 @@ $tertiary_font : 'trebuchet ms', sans-serif;
   @include rem('padding-bottom',11px);
   @include rem('margin-bottom',24px);
   border-bottom: 1px solid #DDD;
-  color: $header;
-  font-family: $secondary_font;
+  color: $text_primary;
+  font-family: $font_secondary;
 }
 
 %element-caption {
   @extend .beta;
   font-weight: normal;
-  color: $header;
+  color: $text_primary;
 }
 
 %element-content {
