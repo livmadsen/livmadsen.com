@@ -11,6 +11,9 @@ LM.Twitterfeed = (function($) {
 			return url.link(url);
 		});
 	};
+	String.prototype.parseLinebreak = function() {
+		return this.replace(/[\n]/g,'<br/>');
+	}
 	String.prototype.parseUsername = function() {
 		return this.replace(/[@]+[A-Za-z0-9-_]+/g, function(u) {
 			var username = u.replace("@","");
@@ -38,7 +41,7 @@ LM.Twitterfeed = (function($) {
 				var createdDate = created.getDate()+'-'+(created.getMonth()+1)+'-'+created.getFullYear()+' | '+created.getHours()+':'+created.getMinutes();
 				var tweetmeta = '<span class="twitter-feed-tweet-meta"><a href="https://twitter.com/#!/livmadsen/status/'+data[i].id_str+'" class="twitter-feed-tweet-meta-date">'+createdDate+'</a></span>';
 				var tweetlink = '<span class="twitter-feed-tweet-link"><a href="https://twitter.com/#!/livmadsen/status/'+data[i].id_str+'">Se på twitter.com</a></span>';
-				tweet = tweet.parseURL().parseUsername().parseHashtag();
+				tweet = tweet.parseLinebreak().parseURL().parseUsername().parseHashtag();
 				$(".js-twitter-feed-container").append('<li class="twitter-feed-tweet">'+tweetmeta+tweet+tweetlink+'</li>');
 			}
 		});
