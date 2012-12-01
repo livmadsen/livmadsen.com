@@ -149,7 +149,8 @@ a:active {
 	@include rem('margin-bottom',zen-half-gutter()/2);
 }
 
-.twitter-feed-tweet-meta {
+.twitter-feed-tweet-meta,
+.twitter-feed-tweet-link {
 	@extend .epsilon;
 	display: block;
 	a {
@@ -157,6 +158,13 @@ a:active {
 		color: $text_light;
 	}
 }
+
+.twitter-feed-account-link {
+	@extend .delta;
+	color: $text_light;
+}
+
+
 
 .twitter-feed-tweets {
 	@extend %element-content;
