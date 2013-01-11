@@ -48,8 +48,8 @@ a {
 	}
 
 a:visited {
-	color: text_lighten($text_link,5%);
-	border-color: text_lighten($text_link,15%);
+	color: lighten($text_link,5%);
+	border-color: lighten($text_link,15%);
 	}
 
 a:hover,
@@ -162,6 +162,7 @@ a:active {
 .twitter-feed-account-link {
 	@extend .delta;
 	color: $text_light;
+	border-color: transparent;
 }
 
 
