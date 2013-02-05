@@ -5,6 +5,8 @@ html {
 	font-size: 62.5%; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
+
+	border-top: 20px solid rgba(255,121,94,0.2);
 	}
 
 body {
@@ -72,23 +74,40 @@ a:active {
 		padding: 1em 0;
 	}
 	@include medium {
-		padding: 1em 4em;
+		padding: 50px;
 	}
 }
 
 .site-top {
-	overflow: hidden;
 	text-align: center;
-	padding-top: 2em;
-	padding-bottom: 3.2em;
+	position: relative;
 
 	@include x-small {
 		display: none;
 	}
 
 	@include small{
-		padding-left: 0;
-		padding-right: 0;
+		padding: 8em 0;
+	}
+
+	@include medium {
+		padding-top: 10em;
+		padding-bottom: 10em;
+	}
+
+	&:before {
+		$sitetop_deco_radius: 150px;
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: $sitetop_deco_radius*2;
+		width: $sitetop_deco_radius*2;
+		margin-left: 0-$sitetop_deco_radius;
+		margin-top: 0-$sitetop_deco_radius;
+		border-radius: 50%;
+		background: rgba(255, 121, 94, .2);
+		box-shadow: 0 0 0 20px rgba(255,121,94,.1);
 	}
 }
 
@@ -213,17 +232,20 @@ a:active {
 
 
 .instagram-feed {
-	padding: 0;
-	padding: 4px;
+	padding: 20px 0 0;
 	background: salmon url(../images/header.jpeg) repeat 0 0;
 	width: 100%;
+	float: left;
 	overflow: hidden;
 	text-align: center;
 	line-height: 0;
+	box-shadow: 0 0 0 20px rgba(255,121,94,0.1), 0 0 0 40px rgba(255,121,94,0.1);
+	margin: 40px 0 0;
 }
 
 .instagrams {
 	padding: 0;
+
 	@include small {
 		width: 150%;
 		margin-left: -25%;
