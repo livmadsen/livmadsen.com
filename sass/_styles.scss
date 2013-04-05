@@ -16,7 +16,7 @@ body {
 	@extend .gamma;
 	font-family: $font_primary;
 	line-height: 1.5;
-	@include single-text-shadow(#FDFDFD, 1px, 1px, 0);
+	// @include single-text-shadow(#FDFDFD, 1px, 1px, 0);
 	color: $text_primary;
 	font-style:  normal;
 	font-weight: 400;
