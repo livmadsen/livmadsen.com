@@ -163,3 +163,10 @@ body {
 	background-color: salmon;
 	@include zen-clear(both);
 }
+
+.site-footer {
+	@include zen-clear;
+	@include zen-grid-item($zen-column-count, 1);
+	text-align: center;
+	margin: auto;
+}

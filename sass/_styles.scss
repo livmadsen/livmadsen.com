@@ -277,3 +277,10 @@ a:active {
 		border: 0;
 	}
 }
+
+
+.site-footer {
+	@extend .zeta;
+	color: $text_light;
+	padding: 1em 0;
+}
