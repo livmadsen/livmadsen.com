@@ -170,12 +170,22 @@ a:active {
 
 .twitter-feed-tweet-meta,
 .twitter-feed-tweet-link {
-	@extend .epsilon;
 	display: block;
+}
+
+.twitter-feed-tweet-link {
+	@extend .epsilon;
 	a {
 		border: 0;
 		color: $text_light;
+		line-height: 2em;
 	}
+}
+
+.twitter-feed-tweet-meta {
+	@extend .zeta;
+	font-family: sans-serif;
+	letter-spacing: 1px;
 }
 
 .twitter-feed-account-link {
