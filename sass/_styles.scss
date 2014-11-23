@@ -5,18 +5,17 @@ html {
 	font-size: 62.5%; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
-
-	border-top: 20px solid rgba(255,121,94,0.2);
 	}
 
 body {
-	padding-top: 13px;
-	background: url(../images/header.jpeg) repeat-x 0 -410px;
+	@include medium{
+		border-left: 1rem solid salmon;
+		border-right: 1rem solid salmon;
+	}
 
 	@extend .gamma;
 	font-family: $font_primary;
 	line-height: 1.5;
-	// @include single-text-shadow(#FDFDFD, 1px, 1px, 0);
 	color: $text_primary;
 	font-style:  normal;
 	font-weight: 400;
@@ -43,22 +42,6 @@ body {
 }
 
 
-a {
-	color: $text_link;
-	border-bottom: 1px solid transparent;
-	text-decoration: none;
-	}
-
-a:visited {
-	color: lighten($text_link,5%);
-	border-color: lighten($text_link,15%);
-	}
-
-a:hover,
-a:active {
-	color: $text_link_active;
-	border-color: $text_link_active;
-	}
 
 
 
@@ -66,7 +49,7 @@ a:active {
 .page-container {
 	overflow: hidden;
 	width: 100%;
-	@include background-image( linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0)) );
+	background-image: linear-gradient(top, rgba(255,255,255,0.6), rgba(255,255,255,0) );
 	@include small-only {
 		padding: 1em;
 	}
@@ -75,6 +58,21 @@ a:active {
 	}
 	@include medium {
 		padding: 50px;
+	}
+	a {
+		color: $text_link;
+		border-bottom: 1px solid transparent;
+		text-decoration: none;
+
+		&:visited {
+			color: lighten($text_link,5%);
+		}
+
+		&:hover,
+		&:active {
+			color: $text_link_active;
+			border-color: $text_link_active;
+		}
 	}
 }
 
@@ -156,63 +154,6 @@ a:active {
 
 
 
-.twitter-feed-header {
-	@extend %element-heading;
-}
-
-.twitter-feed-caption {
-	@extend %element-caption;
-}
-
-.twitter-feed-tweet {
-	@include rem('margin-bottom',zen-half-gutter()/2);
-}
-
-.twitter-feed-tweet-meta,
-.twitter-feed-tweet-link {
-	display: block;
-}
-
-.twitter-feed-tweet-link {
-	@extend .epsilon;
-	a {
-		border: 0;
-		color: $text_light;
-		line-height: 2em;
-	}
-}
-
-.twitter-feed-tweet-meta {
-	@extend .zeta;
-	font-family: sans-serif;
-	letter-spacing: 1px;
-}
-
-.twitter-feed-account-link {
-	@extend .delta;
-	color: $text_light;
-	border-color: transparent;
-}
-
-
-
-.twitter-feed-tweets {
-	@extend %element-content;
-}
-
-
-
-.networks-header {
-	@extend %element-heading;
-}
-
-.networks-caption {
-	@extend %element-caption;
-}
-
-
-
-
 .frontenders-header {
 	@extend %element-heading;
 }
@@ -228,22 +169,8 @@ a:active {
 
 
 
-.networks {
-	li {
-		padding-bottom: 5px;
-		margin-top: 5px;
-	}
-}
-
-.networks-content {
-	@extend %element-content;
-}
-
-
-
 .instagram-feed {
 	padding: 20px 0 0;
-	background: salmon url(../images/header.jpeg) repeat 0 0;
 	width: 100%;
 	float: left;
 	overflow: hidden;
@@ -283,4 +210,12 @@ a:active {
 	@extend .zeta;
 	color: $text_light;
 	padding: 1em 0;
+
+	a,
+	a:visited {
+		color: lighten($text_link,5%);
+	}
+	a:hover {
+		color: $text_link;
+	}
 }

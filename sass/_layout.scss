@@ -1,7 +1,7 @@
 $zen-auto-include-item-base: false;
 
-$zen-column-count: 9;
-$zen-gutter-width: 100px;
+$zen-column-count: 18;
+$zen-gutter-width: 6rem;
 
 $small_gutter: 20px;
 
@@ -51,7 +51,6 @@ body {
 
 .site-top {
 	// background-color: salmon;
-
 	@extend .base-grid-element;
 	@include zen-grid-item($zen-column-count, 1);
 }
@@ -68,46 +67,25 @@ body {
 
 	@extend .base-grid-element;
 	@include small {
+		@include rem('margin-top',$small_gutter*2);
 		@include rem('padding-bottom',$small_gutter*2);
 	}
 
 	@include medium-only{
 		@include zen-clear;
-		@include zen-grid-item($zen-column-count, 1);
+		@include zen-grid-item(16, 2);
 	}
 
 	@include large-only{
-		@include zen-grid-item(5, 1, right);
+		@include zen-grid-item(12, 1, right);
 	}
 
-	@include x-large-only{
-		@include zen-grid-item(5, 3);
+	@include x-large{
+		@include zen-grid-item(8, 6, right);
 	}
-	@include xx-large{
-		@include zen-grid-item(3, 1);
-	}
-}
-
-.twitter-feed {
-	// background: steelBlue ;
-
-	@extend .base-grid-element;
-
-	@include medium-only{
-		@include zen-clear;
-		@include zen-grid-item(5, 1);
-	}
-	@include large-only{
-		@include zen-clear(left);
-		@include zen-grid-item(4, 1);
-	}
-	@include x-large-only{
-		@include zen-clear(right);
-		@include zen-grid-item(2, 1, right);
-	}
-	@include xx-large{
-		@include zen-grid-item(2, 4);
-	}
+	// @include xx-large{
+	// 	@include zen-grid-item(6, 1);
+	// }
 }
 
 .frontenders {
@@ -119,45 +97,20 @@ body {
 		@include rem('padding-bottom',$small_gutter*2);
 	}
 	@include medium-only{
-		@include zen-clear(right);
-		@include zen-grid-item(4, 1, right);
+		@include zen-clear(both);
+		@include zen-grid-item(16, 2);
 	}
 	@include large-only{
-		@include zen-clear(both);
+		@include zen-grid-item(6, 1);
+	}
+	@include x-large{
 		@include zen-grid-item(4, 1);
 	}
-	@include x-large-only{
-		@include zen-grid-item(2, 1);
-	}
-	@include xx-large{
-		@include zen-grid-item(2, 6);
-	}
+	// @include xx-large{
+	// 	@include zen-grid-item(2, 8);
+	// }
 }
 
-
-.networks {
-	// background: paleGoldenRod ;
-
-	@extend .base-grid-element;
-
-	@include medium-only{
-		@include zen-clear(right);
-		@include zen-grid-item(4, 1, right);
-	}
-
-	@include large-only{
-		@include zen-grid-item(5, 5);
-	}
-
-	@include x-large-only{
-		@include zen-clear(left);
-		@include zen-grid-item(2, 1);
-		padding-top: 0;
-	}
-	@include xx-large{
-		@include zen-grid-item(2, 8);
-	}
-}
 
 .instagram-feed {
 	background-color: salmon;

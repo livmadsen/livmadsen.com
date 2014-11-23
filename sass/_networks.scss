@@ -1,0 +1,159 @@
+$networks-item-height: 3rem;
+$networks-bar-padding: .4rem;
+
+.networks {
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: right;
+  background: #fff;
+  text-align: right;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 0 0 0 0.3rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.02);
+
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    color: white;
+  }
+
+  @include medium {
+    right: 1rem;
+  }
+}
+
+.networks__image {
+  border-radius: 50%;
+  height: $networks-item-height;
+  width: $networks-item-height;
+  margin: $networks-bar-padding;
+}
+
+.networks__header {
+  padding: .2em .5em;
+}
+
+.networks__toggle {
+  height: $networks-item-height - $networks-bar-padding*2;
+  width: $networks-item-height - $networks-bar-padding*2;
+  padding: $networks-bar-padding*2 $networks-bar-padding;
+}
+
+.networks__trigger {
+  display: block;
+  text-align: center;
+  height: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  border-radius: 0.3rem;
+  .networks__trigger-icon {
+    fill: salmon;
+  }
+  &,
+  &:visited {
+    border-bottom: none;
+  }
+  &:hover,
+  &:active {
+    .networks__trigger-icon {
+      fill: lighten(salmon, 10%);
+    }
+  }
+}
+
+
+.networks__list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  list-style-type: none;
+}
+
+.networks__item {
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.networks__link {
+  display: inline-block;
+  background: salmon;
+  text-decoration: none;
+  color: white;
+  padding: .25em $networks-bar-padding .2em $networks-bar-padding*2;
+  border: $networks-bar-padding solid white;
+  line-height: normal;
+
+  &:hover {
+    background: lighten(salmon, 10%);
+  }
+}
+
+.networks__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-left: $networks-bar-padding;
+  fill: white;
+  vertical-align: bottom;
+}
+
+
+$networks-item-count: 7;
+$speed: .09;
+@mixin networks-items($reverse: false) {
+  @for $i from 1 through $networks-item-count {
+    @if $reverse {
+      $delay: $networks-item-count*$speed  - $i*$speed !global;
+    } @else {
+      $delay: $i*$speed !global;
+    }
+    .networks__item:nth-child(#{$i}){
+      transition: margin ease #{$speed}s #{$delay}s;
+    }
+  }
+}
+
+/* toggle */
+#networks {
+  &:not(:target) {
+    height:0;
+    width: 0;
+    padding: 0;
+
+    .networks__list {
+      pointer-events: none;
+    }
+
+    .networks__item {
+      margin-left: 110%;
+    }
+
+    @include networks-items($reverse: true);
+  }
+
+  &:target {
+    display: block;
+
+    .networks__list {
+      pointer-events: auto;
+    }
+
+    .networks__item {
+      margin-left: 0;
+    }
+
+    @include networks-items;
+
+    + .networks__toggle {
+      display: none;
+    }
+  }
+}
