@@ -199,7 +199,7 @@ body {
 }
 
 .instagram-placeholder {
-	@include inline-block;
+	display: inline-block;
 	a {
 		border: 0;
 	}
