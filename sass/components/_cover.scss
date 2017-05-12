@@ -1,0 +1,24 @@
+.cover {
+  height: 100vh;
+  background-color: salmon;
+  background-image: linear-gradient(-165deg, salmon 30%, #fdd514 100%);
+  text-align: center;
+  position: relative;
+
+  @include x-small {
+    display: none;
+  }
+}
+
+.cover__intro {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cover__networks {
+  position: fixed;
+  top: 0;
+  right: 0;
+}

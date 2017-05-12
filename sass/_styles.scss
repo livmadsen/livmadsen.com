@@ -8,11 +8,6 @@ html {
 	}
 
 body {
-	@include medium{
-		border-left: 1rem solid salmon;
-		border-right: 1rem solid salmon;
-	}
-
 	@extend .gamma;
 	font-family: $font_primary;
 	line-height: 1.5;
@@ -76,72 +71,8 @@ body {
 	}
 }
 
-.site-top {
-	text-align: center;
-	position: relative;
 
-	@include x-small {
-		display: none;
-	}
 
-	@include small{
-		padding: 8em 0;
-	}
-
-	@include medium {
-		padding-top: 10em;
-		padding-bottom: 10em;
-	}
-
-	&:before {
-		$sitetop_deco_radius: 150px;
-		content: "";
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		height: $sitetop_deco_radius*2;
-		width: $sitetop_deco_radius*2;
-		margin-left: 0-$sitetop_deco_radius;
-		margin-top: 0-$sitetop_deco_radius;
-		border-radius: 50%;
-		background: rgba(255, 121, 94, .2);
-		box-shadow: 0 0 0 20px rgba(255,121,94,.1);
-	}
-}
-
-.intro-line-1 {
-	margin: 0;
-	font-family: $font_secondary ;
-	@include font-size(64px);
-	line-height: 1.1;
-	color: #ff795e;
-	font-weight: normal;
-}
-.intro-line-2 {
-	margin: 0px auto;
-	text-shadow: 2px 2px 0 #F4F1DD;
-}
-.intro-subline-1,
-.intro-subline-3 {
-	@include font-size(80px);
-	font-weight: 700;
-	line-height: 1;
-	font-family: $font_tertiary;
-	letter-spacing: .02em;
-}
-.intro-subline-2 {
-	margin: 0 -7px 0 -2px;
-	display: inline-block;
-	font-family: $font_secondary ;
-	@include font-size(26px);
-	line-height: 1;
-	letter-spacing: .02em;
-	text-shadow: 2px 2px 0 #F4F1DD;
-	font-weight: normal;
-}
-.intro-sub-word-1 {
-	display: block;
-}
 
 
 
