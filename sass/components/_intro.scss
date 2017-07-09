@@ -1,53 +1,16 @@
 .intro {
-  &::before {
-    content: '';
-    $sitetop_deco_radius: 150px;
-    height: $sitetop_deco_radius*2;
-    width: $sitetop_deco_radius*2;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .2);
-    box-shadow: 0 0 0 20px rgba(255,255,255,.1);    
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 1em;
+}
+
+.intro__image {
+  margin: 1em;
+}
+
+.intro__text {
+  &::selection {
+    background-color: salmon;
+    color: #fff;
   }
-}
-
-.intro__line-1 {
-  margin: 0;
-  font-family: $font_secondary ;
-  @include font-size(64px);
-  line-height: 1.1;
-  color: #fff;
-  font-weight: normal;
-}
-
-.intro__line-2 {
-  margin: 0px auto;
-  white-space: nowrap;
-  position: relative;
-}
-
-.intro__subline-1,
-.intro__subline-3 {
-  @include font-size(80px);
-  font-weight: 700;
-  line-height: 1;
-  font-family: $font_tertiary;
-  letter-spacing: .02em;
-}
-
-.intro__subline-2 {
-  margin: 0 -7px 0 -2px;
-  display: inline-block;
-  font-family: $font_secondary ;
-  @include font-size(26px);
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: normal;
-}
-
-.intro__sub-word-1 {
-  display: block;
 }

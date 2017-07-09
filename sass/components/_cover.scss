@@ -4,21 +4,26 @@
   background-image: linear-gradient(-165deg, salmon 30%, #fdd514 100%);
   text-align: center;
   position: relative;
-
-  @include x-small {
-    display: none;
-  }
 }
 
 .cover__intro {
+  $cover_deco_size: 40vh;
+  $cover_deco_offset: 10vh;
+  $cover_deco_top: (100vh - $cover_deco_size) / 2 - $cover_deco_offset;
+  height: $cover_deco_size;
+  width: $cover_deco_size;
+  background: rgba(255, 255, 255, .2);
+  box-shadow: 0 0 0 25px rgba(255,255,255,.1);    
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: $cover_deco_top;
+  transform: translateX(-50%);
 }
 
 .cover__networks {
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
